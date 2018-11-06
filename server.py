@@ -105,7 +105,8 @@ def Socket_Thread():
 						for socket, name in client_queue.items():
 							if name == username:
 								socket.send(str.encode(message))
-						del client_queue[connected_socket]
+								del client_queue[connected_socket]
+								break
 						connected_socket.send(str.encode(response))
 						continue
 			else:
